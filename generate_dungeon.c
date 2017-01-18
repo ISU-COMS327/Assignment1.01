@@ -15,7 +15,7 @@
 #define MIN_ROOM_HEIGHT 5
 #define MAX_ROOM_HEIGHT 15
 
-int board[HEIGHT][WIDTH] = {{0}};
+int board[HEIGHT][WIDTH] = {{ROCK}};
 
 typedef struct {
     int start_x;
