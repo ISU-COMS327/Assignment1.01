@@ -4,5 +4,5 @@
 
 int main(int argc, char *args[]) {
     printf("Generating dungeon");
-	return 0;
+    return 0;
 }
