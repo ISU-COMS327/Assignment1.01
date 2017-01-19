@@ -17,18 +17,20 @@
 
 int board[HEIGHT][WIDTH] = {{ROCK}};
 
-typedef struct {
+struct Room {
     int start_x;
     int end_x;
     int start_y;
     int end_y;
-} tRoom;
+};
 
 int random_int(int min_num, int max_num);
 void initialize_immutable_rock();
 void print_board();
 void print_cell();
 void dig_rooms(int number_of_rooms_to_dig);
+void dig_room(int index);
+struct Room rooms[MIN_NUMBER_OF_ROOMS];
 
 int main(int argc, char *args[]) {
     printf("Generating dungeon. Random number: %d\n", random_int(0, 50));
@@ -91,4 +93,16 @@ void print_cell(int cell) {
 
 void dig_rooms(int number_of_rooms_to_dig) {
     printf("Digging %d rooms!\n", number_of_rooms_to_dig);
+    for (int i = 0; i < number_of_rooms_to_dig; i++) {
+        dig_room(i);
+    }
+}
+
+void dig_room(int index) {
+    // TODO write algorithm for determining room spaces
+    printf("Digging a room for index %d\n", index);
+    rooms[index].start_x = 0;
+    rooms[index].start_y = 0;
+    rooms[index].end_x = 1;
+    rooms[index].end_y = 1;
 }
