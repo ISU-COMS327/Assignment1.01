@@ -33,6 +33,7 @@ void dig_rooms(int number_of_rooms_to_dig);
 int main(int argc, char *args[]) {
     printf("Generating dungeon. Random number: %d\n", random_int(0, 50));
     initialize_immutable_rock();
+    dig_rooms(MIN_NUMBER_OF_ROOMS);
     print_board();
     return 0;
 }
@@ -86,4 +87,8 @@ void print_cell(int cell) {
     else {
         printf("F");
     }
+}
+
+void dig_rooms(int number_of_rooms_to_dig) {
+    printf("Digging %d rooms!\n", number_of_rooms_to_dig);
 }
