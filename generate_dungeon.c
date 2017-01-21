@@ -21,6 +21,7 @@ struct Room {
     int end_x;
     int start_y;
     int end_y;
+    int is_connected;
 };
 
 int random_int(int min_num, int max_num, int add_to_seed);
@@ -31,12 +32,15 @@ void dig_rooms(int number_of_rooms_to_dig);
 void dig_room(int index);
 int room_is_valid_at_index(int index);
 void add_rooms_to_board();
+void dig_cooridors();
+void connect_rooms_at_indexes(int index1, int index2);
 struct Room rooms[MIN_NUMBER_OF_ROOMS];
 
 int main(int argc, char *args[]) {
     printf("Generating dungeon. Random number: %d\n", random_int(0, 50, 0));
     initialize_immutable_rock();
     dig_rooms(MIN_NUMBER_OF_ROOMS);
+    dig_cooridors();
     print_board();
     return 0;
 }
@@ -150,4 +154,30 @@ void add_rooms_to_board() {
             }
         }
     } 
+}
+
+void dig_cooridors() {
+    printf("I don't like cooridors\n");
+    int number_of_connected_rooms = 0;
+    while (number_of_connected_rooms < MIN_NUMBER_OF_ROOMS) {
+        int room_index = random_int(0, MIN_NUMBER_OF_ROOMS - 1, 0);
+        int other_room_index = MIN_NUMBER_OF_ROOMS - 1 - room_index;
+        if (other_room_index == room_index) {
+            other_room_index ++;   
+        }
+        struct Room room = rooms[room_index];
+        struct Room other_room = rooms[other_room_index];
+        connect_rooms_at_indexes(room_index, other_room_index);
+        if (!room.is_connected) {
+            number_of_connected_rooms ++;
+        }
+        if (!other_room.is_connected) {
+            number_of_connected_rooms ++;
+        }
+        number_of_connected_rooms = MIN_NUMBER_OF_ROOMS;
+    }
+}
+
+void connect_rooms_at_indexes(int index1, int index2) {
+    printf("Connecting rooms at %d -> %d\n", index1, index2);
 }
