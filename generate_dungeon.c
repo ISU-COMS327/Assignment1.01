@@ -10,7 +10,7 @@
 #define ROOM 1
 #define CORRIDOR 2
 #define MIN_NUMBER_OF_ROOMS 10
-#define MAX_NUMBER_OF_ROOMS 20
+#define MAX_NUMBER_OF_ROOMS 25
 #define MIN_ROOM_WIDTH 7
 #define DEFAULT_MAX_ROOM_WIDTH 15
 #define MIN_ROOM_HEIGHT 5
@@ -66,7 +66,7 @@ int main(int argc, char *args[]) {
         NUMBER_OF_ROOMS = MAX_NUMBER_OF_ROOMS;
     }
 
-    printf("#Rooms: %d\n", NUMBER_OF_ROOMS);
+    printf("Making %d rooms.\n", NUMBER_OF_ROOMS);
 
     // Generate board
     initialize_immutable_rock();
