@@ -21,7 +21,6 @@ struct Room {
     int end_x;
     int start_y;
     int end_y;
-    int is_connected;
 };
 
 int random_int(int min_num, int max_num, int add_to_seed);
@@ -37,7 +36,7 @@ void connect_rooms_at_indexes(int index1, int index2);
 struct Room rooms[MIN_NUMBER_OF_ROOMS];
 
 int main(int argc, char *args[]) {
-    printf("Generating dungeon. Random number: %d\n", random_int(0, 50, 0));
+    printf("Generating dungeon... \n");
     initialize_immutable_rock();
     dig_rooms(MIN_NUMBER_OF_ROOMS);
     dig_cooridors();
@@ -50,7 +49,6 @@ int random_int(int min_num, int max_num, int add_to_seed) {
     if (add_to_seed) {
         seed += add_to_seed;
     }
-    printf("Used seed: %d\n", seed);
     max_num ++;
     int delta = max_num - min_num;
     srand(seed);
@@ -104,8 +102,8 @@ void dig_rooms(int number_of_rooms_to_dig) {
 }
 
 void dig_room(int index) {
-    int start_x = random_int(0, WIDTH, index);
-    int start_y = random_int(0, HEIGHT, index);
+    int start_x = random_int(0, WIDTH - MIN_ROOM_WIDTH, index);
+    int start_y = random_int(0, HEIGHT - MIN_ROOM_HEIGHT, index);
     int room_height = random_int(MIN_ROOM_HEIGHT, MAX_ROOM_HEIGHT, index);
     int room_width = random_int(MIN_ROOM_WIDTH, MAX_ROOM_WIDTH, index);
     int end_y = start_y + room_height;
@@ -120,7 +118,6 @@ void dig_room(int index) {
     rooms[index].start_y = start_y;
     rooms[index].end_x = end_x;
     rooms[index].end_y = end_y;
-    printf("ROOM DATA -- sX: %d, sY: %d, eX: %d, eY: %d, diffX: %d, diffY: %d\n", start_x, start_y, end_x, end_y, (end_x - start_x), (end_y - start_y));
     if (!room_is_valid_at_index(index)) {
         dig_room(index);
     }
@@ -128,6 +125,11 @@ void dig_room(int index) {
 
 int room_is_valid_at_index(int index) {
     struct Room room = rooms[index];
+    int height = room.end_x - room.start_x;
+    int width = room.end_y - room.start_y;
+    if (height < MIN_ROOM_HEIGHT || width < MIN_ROOM_WIDTH) {
+        return 0;
+    }
     for (int i = 0; i < index; i++) {
         struct Room current_room = rooms[i];
         int start_x = current_room.start_x + 1;
@@ -157,27 +159,54 @@ void add_rooms_to_board() {
 }
 
 void dig_cooridors() {
-    printf("I don't like cooridors\n");
-    int number_of_connected_rooms = 0;
-    while (number_of_connected_rooms < MIN_NUMBER_OF_ROOMS) {
-        int room_index = random_int(0, MIN_NUMBER_OF_ROOMS - 1, 0);
-        int other_room_index = MIN_NUMBER_OF_ROOMS - 1 - room_index;
-        if (other_room_index == room_index) {
-            other_room_index ++;   
+    for (int i = 0; i < MIN_NUMBER_OF_ROOMS; i++) {
+        int next_index = i + 1;
+        if (next_index == MIN_NUMBER_OF_ROOMS) {
+            next_index = 0;
         }
-        struct Room room = rooms[room_index];
-        struct Room other_room = rooms[other_room_index];
-        connect_rooms_at_indexes(room_index, other_room_index);
-        if (!room.is_connected) {
-            number_of_connected_rooms ++;
-        }
-        if (!other_room.is_connected) {
-            number_of_connected_rooms ++;
-        }
-        number_of_connected_rooms = MIN_NUMBER_OF_ROOMS;
+        connect_rooms_at_indexes(i, next_index);
     }
 }
 
 void connect_rooms_at_indexes(int index1, int index2) {
-    printf("Connecting rooms at %d -> %d\n", index1, index2);
+    struct Room room1 = rooms[index1];
+    struct Room room2 = rooms[index2];
+    int start_x = ((room1.end_x - room1.start_x) / 2) + room1.start_x;
+    int end_x = ((room2.end_x - room2.start_x) / 2) + room2.start_x;
+    int start_y = ((room1.end_y - room1.start_y) / 2) + room1.start_y;
+    int end_y = ((room2.end_y - room2.start_y) / 2) + room2.start_y;
+    int x_incrementer = 1;
+    int y_incrementer = 1;
+    if (start_x > end_x) {
+        x_incrementer = -1;
+    }
+    if (start_y > end_y) {
+        y_incrementer = -1;
+    }
+    int cur_x = start_x;
+    int cur_y = start_y;
+    while(1) {
+        if (board[cur_y][cur_x] != ROCK) {
+            if (cur_y != end_y) {
+                cur_y += y_incrementer;
+            }
+            else if(cur_x != end_x) {
+                cur_x += x_incrementer;
+            }
+            else if(cur_y == end_y && cur_x == end_x) {
+                break;
+            }
+            continue;
+        }
+        board[cur_y][cur_x] = CORRIDOR;
+        if (cur_y != end_y) {
+            cur_y += y_incrementer;
+        }
+        else if (cur_x != end_x) {
+            cur_x += x_incrementer;
+        }
+        else {
+            break;
+        }
+    }
 }
