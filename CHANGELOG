@@ -1,0 +1,167 @@
+commit 9c3e2d6
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Tue Jan 17 18:40:58 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Tue Jan 17 18:40:58 2017 -0600
+
+    Added .gitignore file and initialized README
+
+commit b7f2645
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Tue Jan 17 18:49:53 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Tue Jan 17 18:49:53 2017 -0600
+
+    Added Makefile and created basic generate_dungeon file
+
+commit ef24e0f
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Wed Jan 18 15:13:52 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Wed Jan 18 15:13:52 2017 -0600
+
+    Change some indentation
+
+commit b26d543
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Wed Jan 18 15:50:39 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Wed Jan 18 15:50:39 2017 -0600
+
+    Add random number generator
+
+commit 11a8e1b
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Wed Jan 18 15:53:39 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Wed Jan 18 15:53:39 2017 -0600
+
+    change magic number to constant
+
+commit c0e0807
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 11:01:09 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 11:01:09 2017 -0600
+
+    Initialize immutable rock and print board
+
+commit ce0869c
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 11:01:24 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 11:01:24 2017 -0600
+
+    Forgot to make clean before committing
+
+commit 124eb95
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 12:28:37 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 12:28:37 2017 -0600
+
+    Begin calling the dig_rooms function
+
+commit 851b38f
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 12:28:56 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 12:28:56 2017 -0600
+
+    forgot to call make clean before previous commit
+
+commit bc41c0a
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 12:39:49 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 12:39:49 2017 -0600
+
+    Created dig_room function
+
+commit f169806
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 12:40:01 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 12:40:01 2017 -0600
+
+    forgot to run make clean before last commit
+
+commit 3c2e54e
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 13:42:36 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 13:42:36 2017 -0600
+
+    include project description pdf for easy reference
+
+commit e316241
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 15:00:59 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 15:00:59 2017 -0600
+
+    Use random numbers to generate room locations
+
+commit edde15c
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Thu Jan 19 15:01:12 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Thu Jan 19 15:01:12 2017 -0600
+
+    forgot to make clean before committing
+
+commit e7d1cd3
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Sat Jan 21 14:37:22 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Sat Jan 21 14:37:22 2017 -0600
+
+    Completed algoritm to construct and draw rooms
+
+commit ec6b5fb
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Sat Jan 21 14:37:34 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Sat Jan 21 14:37:34 2017 -0600
+
+    forgot to call make clean before committing
+
+commit c4d9d6b
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Sat Jan 21 14:59:54 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Sat Jan 21 14:59:54 2017 -0600
+
+    Started cooridor algorithm
+
+commit a7825b0
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Sat Jan 21 15:00:15 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Sat Jan 21 15:00:15 2017 -0600
+
+    Forgot to un-stage files that were meant to be cleaned
+
+commit 530bbc1
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Sat Jan 21 20:20:38 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Sat Jan 21 20:20:38 2017 -0600
+
+    Dungeon creation successfully working
+
+commit d432806 (origin/master)
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Sat Jan 21 23:13:01 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Sat Jan 21 23:13:01 2017 -0600
+
+    Make corridors not straight. Figured out seg-fault problem.
+
+commit 37d95df (HEAD -> master)
+Author:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+AuthorDate: Sat Jan 21 23:21:05 2017 -0600
+Commit:     Joseph McGovern <joseph.mcgovern@webfilings.com>
+CommitDate: Sat Jan 21 23:21:05 2017 -0600
+
+    Update README
